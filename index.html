@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Excavating AI: The Politics of Images in Machine Learning Training Sets</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #111;
+  margin: 0;
+  padding: 2em;
+}
+h1 {
+  font-size: 1.8em;
+}
+h2 {
+  margin-top: 1em;
+  font-size: 1.2em;
+  cursor: pointer;
+  background: #eee;
+  padding: 0.4em;
+  border-radius: 4px;
+}
+p, li {
+  font-size: 1em;
+  margin: 0.2em 0;
+}
+ul {
+  list-style: disc;
+  padding-left: 1.2em;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 0.5em;
+  background: #f9f9f9;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.4em;
+  text-align: left;
+}
+.content {
+  display: none;
+  margin-top: 0.3em;
+}
+a {
+  color: #0645ad;
+}
+</style>
+</head>
+<body>
+<h1>Excavating AI: The Politics of Images in Machine Learning Training Sets</h1>
+
+<h2 onclick="toggle('authors')">Authors</h2>
+<div id="authors" class="content">
+<ul>
+  <li>Kate Crawford – Researcher at Microsoft Research, co-founder of the AI Now Institute</li>
+  <li>Trevor Paglen – Artist and geographer known for investigating mass surveillance and data politics</li>
+</ul>
+</div>
+
+<h2 onclick="toggle('year')">Year</h2>
+<div id="year" class="content">
+<p>2019</p>
+</div>
+
+<h2 onclick="toggle('format')">Format</h2>
+<div id="format" class="content">
+<ul>
+  <li>Online interactive essay</li>
+  <li>Exhibition (Fondazione Prada, Milan; Barbican Centre, London)</li>
+  <li>Research + visual critique</li>
+</ul>
+</div>
+
+<h2 onclick="toggle('audience')">Audience</h2>
+<div id="audience" class="content">
+<ul>
+  <li>Designers, Artists</li>
+  <li>Technologists</li>
+  <li>Researchers in AI, media, ethics</li>
+  <li>General public interested in algorithmic justice, facial recognition, or surveillance</li>
+</ul>
+</div>
+
+<h2 onclick="toggle('description')">Project Description</h2>
+<div id="description" class="content">
+<p>
+Excavating AI reveals how large-scale image datasets used to train machine learning systems are not neutral. It critiques the taxonomies, labels, and biases that shape computer vision through datasets like ImageNet, MegaFace, and Microsoft’s facial recognition dataset. By visualizing how people are sorted and classified, the project challenges the ethical foundations of AI technologies.
+</p>
+</div>
+
+<h2 onclick="toggle('data')">Key Data</h2>
+<div id="data" class="content">
+<table>
+<thead>
+<tr>
+  <th>Dataset</th>
+  <th>Images</th>
+  <th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>ImageNet</td>
+  <td>~14 million</td>
+  <td>Object/image classification</td>
+</tr>
+<tr>
+  <td>MegaFace</td>
+  <td>~4 million</td>
+  <td>Facial recognition training</td>
+</tr>
+<tr>
+  <td>MS-Celeb-1M</td>
+  <td>10 million+</td>
+  <td>Face identification & tagging</td>
+</tr>
+<tr>
+  <td colspan="3">Also referenced: WordNet, UTKFace, web-scraped photo datasets, and classification taxonomies.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2 onclick="toggle('bibAuthors')">Bibliography: Writings by the Authors</h2>
+<div id="bibAuthors" class="content">
+<ul>
+<li>1. Crawford, Kate, and Paglen, Trevor. “Excavating AI: The Politics of Images in Machine Learning Training Sets.” AI Now Institute, 2019. <a href="https://excavating.ai" target="_blank">https://excavating.ai</a></li>
+<li>2. Crawford, Kate. Atlas of AI. Yale University Press, 2021.</li>
+<li>3. Paglen, Trevor. (2019). From Apple to Anomaly. Barbican Centre, London. <a href="https://www.barbican.org.uk/s/trevorpaglen/" target="_blank">https://www.barbican.org.uk/s/trevorpaglen/</a></li>
+</ul>
+</div>
+
+<h2 onclick="toggle('bibOthers')">Bibliography: Writings by Others</h2>
+<div id="bibOthers" class="content">
+<ul>
+<li>Broussard, Meredith. (2018). Artificial Unintelligence: How Computers Misunderstand the World. MIT Press.</li>
+<li>AI Now Institute. (2018). AI Now Report 2018. <a href="https://ainowinstitute.org/AI_Now_2018_Report.pdf" target="_blank">https://ainowinstitute.org/AI_Now_2018_Report.pdf</a></li>
+<li>Buolamwini, Joy, & Gebru, Timnit. (2018). Gender Shades: Intersectional accuracy disparities in commercial gender classification. In Proceedings of the Conference on Fairness, Accountability, and Transparency, 77–91. <a href="http://proceedings.mlr.press/v81/buolamwini18a.html" target="_blank">http://proceedings.mlr.press/v81/buolamwini18a.html</a></li>
+<li>Solon, Olivia. (2019, March 12). Facial recognition’s ‘dirty little secret’: Millions of online photos scraped without consent. NBC News. <a href="https://www.nbcnews.com/tech/internet/facial-recognition-s-dirty-little-secret-millions-online-photos-scraped-n981921" target="_blank">https://www.nbcnews.com/tech/internet/facial-recognition-s-dirty-little-secret-millions-online-photos-scraped-n981921</a></li>
+<li>Locker, Melissa. (2019, June 6). Microsoft, Duke, and Stanford quietly delete databases with millions of faces. Fast Company. <a href="https://www.fastcompany.com/90360490/microsoft-duke-and-stanford-quietly-delete-databases-with-millions-of-faces" target="_blank">https://www.fastcompany.com/90360490/microsoft-duke-and-stanford-quietly-delete-databases-with-millions-of-faces</a></li>
+<li>Satisky, Jake. (2019, June 12). A Duke study recorded thousands of students’ faces. Now they’re being used all over the world. Duke Chronicle. <a href="https://www.dukechronicle.com/article/2019/06/duke-university-facial-recognition-data-set-study-surveillance-video-students-china-uyghur" target="_blank">https://www.dukechronicle.com/article/2019/06/duke-university-facial-recognition-data-set-study-surveillance-video-students-china-uyghur</a></li>
+<li>Murgia, Madhumita. (2019, April 19). Who’s using your face? The ugly truth about facial recognition. Financial Times. <a href="https://www.ft.com/content/cf19b956-60a2-11e9-b285-3acd5d43599e" target="_blank">https://www.ft.com/content/cf19b956-60a2-11e9-b285-3acd5d43599e</a></li>
+<li>Mitchell, W. J. T. (2007). Picture Theory: Essays on Verbal and Visual Representation. University of Chicago Press.</li>
+<li>Vincent, James. (2020, September 30). Facial recognition’s unregulated rise. The Verge. <a href="https://www.theverge.com/2020/9/30/21494417/facial-recognition-database-removal-privacy-bias" target="_blank">https://www.theverge.com/2020/9/30/21494417/facial-recognition-database-removal-privacy-bias</a></li>
+<li>Prabhu, Vinay Uday, & Birhane, Abeba. (2021). Large Image Datasets: A Pyrrhic Win for Computer Vision? arXiv preprint arXiv:2106.11342. <a href="https://arxiv.org/abs/2106.11342" target="_blank">https://arxiv.org/abs/2106.11342</a></li>
+<li>Birhane, Abeba, & Prabhu, Vinay Uday. (2021). Multimodal datasets: Misogyny, pornography, and malignant stereotypes. arXiv preprint arXiv:2103.01950. <a href="https://arxiv.org/abs/2103.01950" target="_blank">https://arxiv.org/abs/2103.01950</a></li>
+</ul>
+</div>
+
+<script>
+function toggle(id) {
+  const section = document.getElementById(id);
+  section.style.display = section.style.display === 'block' ? 'none' : 'block';
+}
+</script>
+</body>
+</html>

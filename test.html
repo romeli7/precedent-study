@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Excavating AI: Precedent Study</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #111;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #222;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  background: #eee;
+}
+nav button {
+  background: none;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+  font-size: 1em;
+}
+nav button:hover {
+  background: #ddd;
+}
+nav button.active {
+  background: #ccc;
+}
+section {
+  display: none;
+  padding: 2em;
+}
+section.active {
+  display: block;
+}
+h2 {
+  margin-top: 1em;
+  font-size: 1.2em;
+  background: #f0f0f0;
+  padding: 0.4em;
+  border-radius: 4px;
+}
+p, li {
+  font-size: 1em;
+  margin: 0.2em 0;
+}
+ul {
+  list-style: disc;
+  padding-left: 1.2em;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 0.5em;
+  background: #f9f9f9;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.4em;
+  text-align: left;
+}
+a {
+  color: #0645ad;
+}
+#timeline {
+  width: 100%;
+  max-width: 900px;
+  margin: 1em auto;
+}
+#timeline svg {
+  border-radius: 6px;
+  box-shadow: 0 0 5px #ccc;
+  background: #f9f9f9;
+}
+
+/* Ontological Analysis styles */
+#ontological-analysis {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: #222;
+}
+#ontological-analysis h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+#ontological-analysis ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+#ontological-analysis li {
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+#ontological-analysis strong {
+  font-size: 1.2rem;
+  color: #004080;
+}
+.visual-placeholder {
+  margin-top: 1rem;
+  border: 2px dashed #ccc;
+  background-color: #f8f8f8;
+  min-height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Timeline text styles */
+.timeline-group text {
+  font-size: 0.9em;
+  fill: #111;
+}
+.timeline-group .year {
+  font-weight: bold;
+}
+.timeline-event {
+  fill: #0645ad;
+}
+</style>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>Excavating AI: Precedent Study</h1>
+</header>
+
+<nav>
+  <button id="tab1" class="active" onclick="showSection('dataCollection')">Data Collection</button>
+  <button id="tab2" onclick="showSection('layersAnalysis')">Layers of Analysis</button>
+</nav>
+
+<!-- Data Collection -->
+<section id="dataCollection" class="active">
+  <h2>Authors</h2>
+  <ul>
+    <li>Kate Crawford – Researcher at Microsoft Research, co-founder of the AI Now Institute</li>
+    <li>Trevor Paglen – Artist and geographer known for investigating mass surveillance and data politics</li>
+  </ul>
+
+  <h2>Year</h2>
+  <p>2019</p>
+
+  <h2>Format</h2>
+  <ul>
+    <li>Online interactive essay</li>
+    <li>Exhibition (Fondazione Prada, Milan; Barbican Centre, London)</li>
+    <li>Research + visual critique</li>
+  </ul>
+
+  <h2>Audience</h2>
+  <ul>
+    <li>Designers, Artists</li>
+    <li>Technologists</li>
+    <li>Researchers in AI, media, ethics</li>
+    <li>General public interested in algorithmic justice, facial recognition, or surveillance</li>
+  </ul>
+
+  <h2>Project Description</h2>
+  <p>
+    Excavating AI reveals how large-scale image datasets used to train machine learning systems are not neutral. It critiques the taxonomies, labels, and biases that shape computer vision through datasets like ImageNet, MegaFace, and Microsoft’s facial recognition dataset. By visualizing how people are sorted and classified, the project challenges the ethical foundations of AI technologies.
+  </p>
+
+  <h2>Key Data</h2>
+  <table>
+  <thead>
+  <tr>
+    <th>Dataset</th>
+    <th>Images</th>
+    <th>Purpose</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>ImageNet</td>
+    <td>~14 million</td>
+    <td>Object/image classification</td>
+  </tr>
+  <tr>
+    <td>MegaFace</td>
+    <td>~4 million</td>
+    <td>Facial recognition training</td>
+  </tr>
+  <tr>
+    <td>MS-Celeb-1M</td>
+    <td>10 million+</td>
+    <td>Face identification & tagging</td>
+  </tr>
+  <tr>
+    <td colspan="3">Also referenced: WordNet, UTKFace, web-scraped photo datasets, and classification taxonomies.</td>
+  </tr>
+  </tbody>
+  </table>
+
+  <h2>Bibliography: Writings by the Authors</h2>
+  <ul>
+    <li>Crawford, Kate, and Paglen, Trevor. “Excavating AI: The Politics of Images in Machine Learning Training Sets.” AI Now Institute, 2019. <a href="https://excavating.ai" target="_blank">Link</a></li>
+    <li>Crawford, Kate. Atlas of AI. Yale University Press, 2021.</li>
+    <li>Paglen, Trevor. From Apple to Anomaly. Barbican Centre, London, 2019. <a href="https://www.barbican.org.uk/s/trevorpaglen/" target="_blank">Link</a></li>
+  </ul>
+
+  <h2>Bibliography: Writings by Others</h2>
+  <ul>
+    <li>Broussard, Meredith. Artificial Unintelligence. MIT Press, 2018.</li>
+    <li>AI Now Institute. AI Now Report 2018. <a href="https://ainowinstitute.org/AI_Now_2018_Report.pdf" target="_blank">Link</a></li>
+    <li>Buolamwini, Joy, & Gebru, Timnit. “Gender Shades.” 2018. <a href="http://proceedings.mlr.press/v81/buolamwini18a.html" target="_blank">Link</a></li>
+    <li>Solon, Olivia. Facial recognition’s ‘dirty little secret’. NBC News, 2019. <a href="https://www.nbcnews.com/tech/internet/facial-recognition-s-dirty-little-secret-millions-online-photos-scraped-n981921" target="_blank">Link</a></li>
+    <li>Locker, Melissa. Microsoft, Duke, and Stanford quietly delete databases. Fast Company, 2019. <a href="https://www.fastcompany.com/90360490/microsoft-duke-and-stanford-quietly-delete-databases-with-millions-of-faces" target="_blank">Link</a></li>
+    <li>Satisky, Jake. A Duke study recorded thousands of students’ faces. Duke Chronicle, 2019. <a href="https://www.dukechronicle.com/article/2019/06/duke-university-facial-recognition-data-set-study-surveillance-video-students-china-uyghur" target="_blank">Link</a></li>
+    <li>Murgia, Madhumita. Who’s using your face? Financial Times, 2019. <a href="https://www.ft.com/content/cf19b956-60a2-11e9-b285-3acd5d43599e" target="_blank">Link</a></li>
+    <li>Mitchell, W. J. T. Picture Theory. University of Chicago Press, 2007.</li>
+    <li>Prabhu, Vinay Uday, & Birhane, Abeba. Large Image Datasets. arXiv, 2021. <a href="https://arxiv.org/abs/2106.11342" target="_blank">Link</a></li>
+    <li>Birhane, Abeba, & Prabhu, Vinay Uday. Multimodal datasets. arXiv, 2021. <a href="https://arxiv.org/abs/2103.01950" target="_blank">Link</a></li>
+  </ul>
+</section>
+
+<!-- Layers of Analysis -->
+<section id="layersAnalysis">
+<h2>Ontological Analysis</h2>
+  <p>
+    Excavating AI is a meticulous investigation into how machine learning systems inherit and perpetuate cultural assumptions through the images used to train them. Rather than treating datasets as neutral resources, the project unpacks their hidden architectures, taxonomies, and the ways they encode power, identity, and bias. Each section visually and critically exposes a layer of the infrastructures that sustain computer vision.
+  </p>
+
+  <ul>
+  <li>
+    <strong>Training AI</strong><br/>
+    The project begins by comparing artworks to show how images can hold many meanings. Agnes Martin’s <em>White Flower</em> and Magritte’s <em>The Treachery of Images</em> reveal how labels never fully capture what an image is or does. This points out that AI systems rely on naming and sorting to make sense of pictures. But the gap between an image and its label is always there. This gap is a core problem in supervised learning. It helps explain why AI can misread or oversimplify visual experience.
+    <div style="display: flex; justify-content: center; gap: 1em; margin-top: 1em;">
+      <img src="trainingai2.jpg" alt="White Flower by Agnes Martin, 1960" style="width: 35%; border-radius: 4px;" />
+      <img src="trainingai1.jpg" alt="The Treachery of Images by René Magritte, 1929" style="width: 35%; border-radius: 4px;" />
+    </div>
+  </li>
+
+  <li>
+    <strong>Anatomy of a Training Set</strong><br/>
+    Using ImageNet as an example, the project shows how millions of pictures are sorted and labeled by paid workers on Mechanical Turk. These platforms are part of the hidden labor behind datasets. One image shows the interface where workers assign tags. Another highlights the label “Hermaphrodite,” which exposes harmful and outdated ideas still embedded in the system. This reveals that bias is not rare but common. Data collection always carries traces of culture and prejudice.
+    <div style="display: flex; justify-content: center; gap: 1em; margin-top: 1em;">
+      <img src="anatomy2.png" alt="Amazon Turk labeling interface for ImageNet" style="width: 35%; border-radius: 4px;" />
+      <img src="anatomy1.jpg" alt="ImageNet category 'Hermaphrodite' within Person taxonomy" style="width: 35%; border-radius: 4px;" />
+    </div>
+  </li>
+
+  <li>
+    <strong>Categories and Image Selections from “Person” Classes, ImageNet</strong><br/>
+    The project gathers examples of ImageNet’s “Person” categories like “Accused,” “Kleptomaniac,” and “Anti-Semite.” The faces are partly covered to show that these labels turn real people into harmful types. This evidence shows how classification systems create stereotypes. The images prove that bias is structural, not just an accident. They show how datasets can reproduce stigma and exclusion. This problem is central to computer vision.
+    <div style="display: flex; justify-content: center; gap: 1em; margin-top: 1em;">
+      <img src="cat2.jpeg" alt="Selections from ImageNet 'Person' category" style="width: 35%; border-radius: 4px;" />
+      <img src="cat1.jpg" alt="Labeled Images from ImageNet with redacted faces" style="width: 35%; border-radius: 4px;" />
+    </div>
+  </li>
+
+  <li>
+    <strong>UTK: Making Race and Gender from Faces</strong><br/>
+    The UTKFace dataset shows how AI systems assign simple labels like “White Male” or "Indian Male" to people’s faces. This practice flattens complex identities into fixed categories. The project explains how these labels echo the history of racial pseudoscience. The images make this process visible. They show how old ideas about difference get encoded into new technologies. This raises questions about who decides how identity is defined.
+    <div style="display: flex; justify-content: center; gap: 1em; margin-top: 1em;">
+      <img src="utk1.jpg" alt="Sample images from UTKFace dataset" style="width: 35%; border-radius: 4px;" />
+      <img src="utk2.jpg" alt="Classification scheme used in UTKFace dataset" style="width: 35%; border-radius: 4px;" />
+    </div>
+  </li>
+
+  <li>
+    <strong>IBM's Diversity in Faces</strong><br/>
+    IBM tried to build a fairer dataset by adding details about facial symmetry, craniofacial landmarks, and skin tone. But the project shows how even these efforts still divide people into measurable traits. The dataset still uses binary gender and fixed labels. This example proves that even improvements can keep old ideas in place. The images show how fairness can become another form of control. This challenges simple claims about bias-free AI.
+    <div style="display: flex; justify-content: center; margin-top: 1em;">
+      <img src="ibm.png" alt="IBM Diversity in Faces dataset example" style="width: 60%; border-radius: 4px;" />
+    </div>
+  </li>
+
+  <li>
+    <strong>Epistemics of Training Sets</strong><br/>
+    This section questions the idea that visual data can be perfectly sorted or fully understood. Excavating AI argues that datasets always carry the worldviews and politics of their makers. Every choice about labels, categories, and images reflects power. The project shows that knowledge itself is shaped by culture and context. This raises deeper questions about objectivity. It invites us to think about what data leaves out.
+  </li>
+
+  <li>
+    <strong>Missing Persons</strong><br/>
+    A photo from the MS-Celeb dataset shows the millions of faces that were removed after backlash over consent and privacy. This removal is a reminder that AI systems are built on unsteady ground. The disappearance of data is itself a record of conflict. It shows how power and ethics collide in dataset construction. The project uses this absence as evidence. It calls for accountability and transparency.
+    <div style="display: flex; justify-content: center; margin-top: 1em;">
+      <img src="missp.jpg" alt="Example image from MS CELEB dataset" style="width: 60%; border-radius: 4px;" />
+    </div>
+  </li>
+
+  <li>
+    <strong>Conclusion: Who Decides?</strong><br/>
+    The project ends with a photo of Memphis sanitation workers holding “I AM A MAN” signs. This moment connects the right to name yourself to the ethics of AI. Excavating AI argues that labeling is always about power. Just as people have fought for the right to define their identity, AI systems define people without their say. The work asks who gets to decide what names, categories, and labels mean. It shows how this question links past and present struggles.
+    <div style="display: flex; justify-content: center; margin-top: 1em;">
+      <img src="conc.jpg" alt="Photograph from Memphis Sanitation Workers Strike, 1968" style="width: 60%; border-radius: 4px;" />
+    </div>
+  </li>
+  </ul>
+
+  <h2>Historical and Contextual Analysis</h2>
+  <p style="margin-top: 1em; max-width: 900px; margin-left: auto; margin-right: auto;">
+  This timeline situates <em>Excavating AI</em> (2019) within the critical discourse on AI ethics, dataset transparency, and facial recognition bias from 2018 through 2025. It highlights key studies, publications, and events that have shaped ongoing debates. <strong>Hover over each point in the timeline to read detailed insights into these pivotal moments.</strong>
+  </p>
+  <div id="timeline"></div>
+
+<h2>Visual and Aesthetic Representation</h2>
+<p style="text-indent: 2em;">
+  Excavating AI uses a minimalist, precise visual language to communicate its critical message. With clean typography, subdued grayscale palettes, and documentary-style imagery, the project foregrounds the raw dataset content, thousands of labeled images arranged in dense taxonomic grids. This forensic aesthetic reveals the scale and impersonal nature of data collection, emphasizing how individuals are reduced to abstract categories within AI training datasets.
+</p>
+<p style="text-indent: 2em;">
+  Visually, the project materializes the hidden systems of classification, bias, and power embedded in large-scale datasets, making visible the structural violence often overlooked in machine learning. The representational style serves as both documentation and critique, turning the data itself into a subject of scrutiny.
+</p>
+<p style="text-indent: 2em;">
+  While earlier conceptual artists like Harun Farocki pioneered visual critiques of surveillance and media systems, Excavating AI also draws on more recent critical precedents in data science and AI ethics. It aligns with projects like Algorithmic Justice League (led by Joy Buolamwini), Data &amp; Society’s visual reports, and artists like Lauren McCarthy and Addie Wagenknecht who explore AI and data through immersive installations and interactive media.
+</p>
+<p style="text-indent: 2em;">
+  Moreover, the project connects to emerging communities of critical data visualization practitioners, such as those featured in the Mozilla Festival’s Open Data Visualizations or the Information is Beautiful Awards, who use minimalist and data-driven aesthetics to surface social and political implications of technology.
+</p>
+<p style="text-indent: 2em;">
+  In this way, Excavating AI situates itself within a vibrant interdisciplinary ecosystem that combines art, design, activism, and research to interrogate and challenge the power dynamics of AI systems. Its aesthetic choices are not just stylistic but strategic, using visual clarity and scale to provoke reflection on the ethical foundations and societal impact of machine learning datasets.
+</p>
+
+</section>
+
+<script>
+// Show/hide tabs
+function showSection(id) {
+  document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+  if (id === 'dataCollection') document.getElementById('tab1').classList.add('active');
+  if (id === 'layersAnalysis') document.getElementById('tab2').classList.add('active');
+  if (id === 'finalSubmission') document.getElementById('tab3').classList.add('active');
+}
+
+// Timeline data
+const data = [
+  {
+    year: 2018,
+    event: "AI Now Report 2018 questions dataset bias",
+    details: "The AI Now Report identified how datasets embed social biases. It emphasized transparency in dataset construction. The report noted facial recognition can reinforce discrimination. It became a foundational text in AI ethics debates."
+  },
+  {
+    year: 2018,
+    event: "Gender Shades study highlights facial recognition bias",
+    details: "Buolamwini and Gebru showed error rates up to 34% for dark-skinned women. Training data lacked diversity. They called for auditing AI performance across demographics. This spurred companies to reevaluate facial analysis systems."
+  },
+  {
+    year: 2019,
+    event: "Excavating AI published by Crawford & Paglen",
+    details: "Excavating AI exposed how ImageNet relied on biased taxonomies. It argued datasets are socially constructed. The work connected AI to histories of classification. It blended essays with visual critique."
+  },
+  {
+    year: 2019,
+    event: "Microsoft deletes MS-Celeb-1M dataset",
+    details: "Microsoft removed the MS-Celeb dataset of 10 million faces. Images were scraped without consent. Deletion highlighted privacy concerns. The event intensified scrutiny of data sourcing practices."
+  },
+  {
+    year: 2020,
+    event: "Public debates on facial recognition ethics intensify",
+    details: "Reports showed concern over face datasets in academia and corporations. Activists called for moratoriums on facial recognition. Media coverage broadened the debate. This marked a shift to mainstream awareness."
+  },
+  {
+    year: 2021,
+    event: "Atlas of AI book published by Kate Crawford",
+    details: "Atlas of AI examined extraction in AI—from minerals to human labor. Crawford detailed the political economy of data. The book argued AI perpetuates inequality by design. It became an influential critique."
+  },
+  {
+    year: 2023,
+    event: "Calls for dataset transparency increase",
+    details: "Researchers published analyses of large image datasets. They highlighted undocumented practices and bias. Papers on arXiv called for dataset audits. Transparency became a central demand in AI ethics."
+  },
+  {
+    year: 2025,
+    event: "Ongoing debates on AI fairness and surveillance",
+    details: "Debates continue over algorithmic fairness and consent. Policymakers consider legislation for ethical data practices. Research scrutinizes long-term impacts of facial recognition. The field grapples with accountability."
+  }
+];
+
+function drawTimeline() {
+  const margin = { top: 20, right: 20, bottom: 20, left: 120 };
+  const width = 900 - margin.left - margin.right;
+  const height = data.length * 100;
+
+  const svg = d3.select("#timeline")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom);
+
+  const g = svg.append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+  const y = d3.scaleLinear()
+    .domain([0, data.length - 1])
+    .range([0, height - margin.top - margin.bottom]);
+
+  // Timeline vertical line
+  g.append("line")
+    .attr("x1", 0)
+    .attr("y1", 0)
+    .attr("x2", 0)
+    .attr("y2", height - margin.top - margin.bottom)
+    .attr("stroke", "#0645ad")
+    .attr("stroke-width", 2);
+
+  const events = g.selectAll(".timeline-group")
+    .data(data)
+    .enter()
+    .append("g")
+    .attr("class", "timeline-group")
+    .attr("transform", (d, i) => `translate(0, ${y(i)})`);
+
+  // Circles
+  events.append("circle")
+    .attr("cx", 0)
+    .attr("cy", 0)
+    .attr("r", 8)
+    .attr("fill", "#0645ad")
+    .on("mouseover", showTooltip)
+    .on("mouseout", hideTooltip);
+
+  // Year labels
+  events.append("text")
+    .attr("class", "year")
+    .attr("x", -10)
+    .attr("y", 5)
+    .attr("text-anchor", "end")
+    .text(d => d.year)
+    .on("mouseover", showTooltip)
+    .on("mouseout", hideTooltip);
+
+  // Event text with wrapping
+  events.append("text")
+    .attr("class", "event")
+    .attr("x", 20)
+    .attr("y", 0)
+    .attr("dy", "0.35em")
+    .style("font-size", "1em")
+    .style("fill", "#333")
+    .text(d => d.event)
+    .on("mouseover", showTooltip)
+    .on("mouseout", hideTooltip);
+
+  // Tooltip div
+  const tooltip = d3.select("body").append("div")
+    .attr("id", "tooltip")
+    .style("opacity", 0)
+    .style("position", "absolute")
+    .style("text-align", "left")
+    .style("max-width", "300px")
+    .style("padding", "8px")
+    .style("font-size", "0.9em")
+    .style("background", "#fff")
+    .style("border", "1px solid #ccc")
+    .style("border-radius", "4px")
+    .style("pointer-events", "none")
+    .style("box-shadow", "0 0 5px rgba(0,0,0,0.3)")
+    .style("line-height", "1.4");
+
+  function showTooltip(event, d) {
+    tooltip.transition().duration(200).style("opacity", 0.95);
+    tooltip.html(
+      `<strong>${d.year}</strong><br/>
+       <em>${d.event}</em><br/><br/>${d.details}`
+    )
+      .style("left", (event.pageX + 15) + "px")
+      .style("top", (event.pageY - 28) + "px");
+  }
+
+  function hideTooltip() {
+    tooltip.transition().duration(300).style("opacity", 0);
+  }
+}
+
+drawTimeline();
+</script>
+
+</body>
+</html>
+
